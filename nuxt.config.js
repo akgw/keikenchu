@@ -1,3 +1,4 @@
+const env = require('dotenv').config();
 const parseArgs = require("minimist")
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -19,6 +20,7 @@ const host =
   process.env.npm_package_config_nuxt_host ||
   "localhost"
 module.exports = {
+  mode: 'spa',
   env: {
     baseUrl:
       process.env.BASE_URL ||
@@ -47,6 +49,7 @@ module.exports = {
       }
     ]
   },
+  env: env.parsed,
   /*
   ** Customize the progress-bar color
   */

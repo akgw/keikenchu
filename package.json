@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@nuxtjs/axios": "^5.0.0",
+    "firebase-tools": "^6.2.2",
     "nuxt": "^2.3.4",
     "nuxt-property-decorator": "^1.2.0",
     "vuex-class": "^0.3.0"
@@ -15,10 +16,12 @@
     "generate": "nuxt generate",
     "heroku-postbuild": "npm run build",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'",
-    "lint:fix": "yarn lint --fix"
+    "lint:fix": "yarn lint --fix",
+    "deploy:firebase": "firebase deploy --project keikenchu"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
+    "dotenv": "^6.2.0",
     "prettier": "^1.15.3",
     "ts-loader": "^5.3.2",
     "tslint": "^5.12.0",
