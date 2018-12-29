@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "tslint-config-airbnb",
+    "tslint-config-prettier"
+  ],
+  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rules": {
+    "prettier": [
+      true,
+      {
+        "singleQuote": true,
+        "printWidth": 150,
+        "trailingComma": "all"
+      }
+    ],
+
+    // TSLintに元から設定されている設定の上書き
+    "max-file-line-count": [true, 350],
+    "variable-name": false,
+    "strict-boolean-expressions": false,
+    "no-parameter-properties": true,
+
+    // tslint-config-airbnb
+    "import-name": false,
+    "object-shorthand-properties-first": false
+  }
+}
