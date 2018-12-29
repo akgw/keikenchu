@@ -1,16 +1,14 @@
-import firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
 
-if (!firebase.apps.length) {
-  firebase.initializeApp(
-    {
-      apiKey: process.env.APIKEY,
-      authDomain: process.env.AUTHDOMAIN,
-      databaseURL: process.env.DATABASEURL,
-      projectId: process.env.PROJECTID,
-      storageBucket: process.env.STORAGEBUCKET,
-      messagingSenderId: process.env.MESSAGINGSENDERID
-    }
-  )
-}
+const config = {
+  apiKey: process.env.APIKEY,
+  authDomain: process.env.AUTHDOMAIN,
+  databaseURL: process.env.DATABASEURL,
+  projectId: process.env.PROJECTID,
+  storageBucket: process.env.STORAGEBUCKET,
+  messagingSenderId: process.env.MESSAGINGSENDERID,
+};
 
-export default firebase
+export const googleProvider = new firebase.auth.GoogleAuthProvider();
+export default (!firebase.apps.length ? firebase.initializeApp(config) : firebase.app());

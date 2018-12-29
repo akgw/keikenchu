@@ -1,10 +1,7 @@
-import { Component, Vue } from 'nuxt-property-decorator';
+import { Vue } from 'nuxt-property-decorator';
 
-@Component({
-  components: {},
-})
-export default class extends Vue {
+export default Vue.extend({
   created() {
     console.log('トップページ');
-  }
-}
+  },
+});
