@@ -62,4 +62,9 @@ module.exports = {
   ],
   axios: {},
   srcDir: 'src/',
+  router: {
+    extendRoutes (routes, resolve) {
+      routes.push({ path: '/', alias: '/top', component: resolve(__dirname, '~/pages/Top') });
+    },
+  },
 }
