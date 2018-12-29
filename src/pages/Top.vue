@@ -2,7 +2,7 @@
   <section>
     <h1>トップページ</h1>
     <div>
-      <router-link to="/my">マイページ</router-link>    
+      <router-link to="/my">マイページ</router-link>
     </div>
   </section>
 </template>

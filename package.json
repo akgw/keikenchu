@@ -18,7 +18,7 @@
     "heroku-postbuild": "npm run build",
     "lint": "tslint -c tslint.json --project tsconfig.json 'src/**/*.ts'",
     "lint:fix": "yarn lint --fix",
-    "deploy:firebase": "firebase deploy --project keikenchu"
+    "deploy:firebase": "yarn build && firebase deploy --project keikenchu"
   },
   "devDependencies": {
     "@types/node": "^10.12.18",
