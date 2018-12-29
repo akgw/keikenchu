@@ -1,7 +1,13 @@
-import { Vue } from 'nuxt-property-decorator';
+import { Vue, Component } from 'nuxt-property-decorator';
+import LoginForm from '@/components/login/Form.vue';
 
-export default Vue.extend({
+@Component({
+  components: {
+    LoginForm,
+  },
+})
+export default class extends Vue {
   created() {
     console.log('トップページ');
-  },
-});
+  }
+}

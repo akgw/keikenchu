@@ -1,15 +1,8 @@
-import { Vue } from 'nuxt-property-decorator';
-import firebase, { googleProvider } from '../plugins/firebase';
+import { Vue, Component } from 'nuxt-property-decorator';
 
-export default Vue.extend({
+@Component({})
+export default class extends Vue {
   created() {
     console.log('myページ');
-  },
-  methods: {
-    async handleClick() {
-      const hoge = await firebase.auth().signInWithRedirect(googleProvider);
-
-      console.log(hoge);
-    },
-  },
-});
+  }
+}
