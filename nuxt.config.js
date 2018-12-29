@@ -61,7 +61,8 @@ module.exports = {
   build: {},
   modules: [
     "@nuxtjs/axios",
-    "~~/modules/typescript.js"
+    "~~/modules/typescript.js",
+    ['cookie-universal-nuxt', {parseJSON: false}]
   ],
   axios: {},
   srcDir: 'src/',
@@ -70,4 +71,5 @@ module.exports = {
       routes.push({ path: '/', alias: '/top', component: resolve(__dirname, '~/pages/Top') });
     },
   },
+  plugins: [{ src: '@/plugins/nuxt-client-init.ts', ssr: false }]
 }
