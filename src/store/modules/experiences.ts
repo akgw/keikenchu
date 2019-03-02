@@ -3,7 +3,7 @@ import { RootState } from '..';
 import RepositoryFactory from '@/repositories/RepositoryFactory';
 
 const type = {
-  START_REGISTER_EXPERIENCE: 'startRegisterExperience',
+  START_REGISTER_EXPERIENCE: 'START_REGISTER_EXPERIENCE',
 };
 
 export type State = {
@@ -20,11 +20,16 @@ const mutations: MutationTree<State> = {
   },
 };
 
+const repository = RepositoryFactory.createExperiencesRpository();
 const actions: ActionTree<State, RootState> = {
+  fetch: async ({ commit, dispatch }: ActionContext<State, RootState>, payload): Promise<void> => {
+    return await repository.fetch(payload.userId);
+  },
+
   register: async ({ commit, dispatch }: ActionContext<State, RootState>, payload): Promise<void> => {
     commit(type.START_REGISTER_EXPERIENCE);
 
-    await RepositoryFactory.createExperiencesRpository().register(payload.userId, 'test_title', 'test_description', 0);
+    await repository.register(payload.userId, 'test_title', 'test_description', 0);
   },
 };
 

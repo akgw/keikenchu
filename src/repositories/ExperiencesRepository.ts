@@ -6,6 +6,10 @@ export default class ExperiencesRepository {
     this.api = api;
   }
 
+  public async fetch(userId: string) {
+    return this.api.fetch(userId);
+  }
+
   public async register(userId: string, title: string, description: string, progress: number) {
     const requestParams: IRegisterRequest = {
       user_id: userId,
